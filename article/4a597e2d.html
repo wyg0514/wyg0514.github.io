@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wyg0514.github.io">
-  <title>Hexo yilia主题的使用 | Hexo</title>
+  <title>Node.js核心技术教程 学习笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="yilia 是一个比较干净，简洁的hexo主题。">
-<meta name="keywords" content="hexo,GitHub,yilia">
+  <meta name="description" content="买了一本Node.js核心技术教程，打算学习下下Node.js…..">
+<meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo yilia主题的使用">
-<meta property="og:url" content="http:&#x2F;&#x2F;wyg0514.github.io&#x2F;2019&#x2F;12&#x2F;01&#x2F;Hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BD%BF%E7%94%A8&#x2F;index.html">
+<meta property="og:title" content="Node.js核心技术教程 学习笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;wyg0514.github.io&#x2F;article&#x2F;4a597e2d.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="yilia 是一个比较干净，简洁的hexo主题。">
+<meta property="og:description" content="买了一本Node.js核心技术教程，打算学习下下Node.js…..">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-05T14:42:34.167Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;wyg0514.github.io&#x2F;article&#x2F;4a597e2d&#x2F;NodeJs.jpg">
+<meta property="og:updated_time" content="2020-01-05T05:06:04.682Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;wyg0514.github.io&#x2F;article&#x2F;4a597e2d&#x2F;NodeJs.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -148,6 +150,34 @@
 					<a class="mail" target="_blank" href="mailto:wyg0514@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
+			<!-- 《左侧边栏添加--APlayer音乐播放器：详见：https://aplayer.js.org/#/zh-Hans/ -->
+			
+			    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+			    <div id="aplayer" style="text-align:left"></div>
+			    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+			    <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+
+			    <!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 -->
+			    <script type="text/javascript" src="/js/APlayer_config.js"></script>
+
+			    <!-- 根据封面自适应主题色，主要是作用于进度条 -->
+			    <script type="text/javascript">
+			          const colorThief = new ColorThief();
+			          const setTheme = (index) => {
+			            if (!ap.list.audios[index].theme) {
+			              colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+			                ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+			              });
+			            }
+			          };
+			          setTheme(ap.list.index);
+			          ap.on('listswitch', (data) => {
+			            setTheme(data.index);
+			          });       
+			    </script>
+			
+			<!-- 左侧边栏添加--APlayer音乐播放器》 -->
 		</nav>
 	</header>		
 </div>
@@ -217,61 +247,81 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hexo-yilia主题的使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Node-js核心技术教程-学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo yilia主题的使用
+      Node.js核心技术教程 学习笔记
     </h1>
   
 
         
-        <a href="/2019/12/01/Hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-12-01T07:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-01</time>
+        <a href="/article/4a597e2d.html" class="archive-article-date">
+  	<time datetime="2019-12-08T07:55:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>yilia 是一个比较干净，简洁的hexo主题。</p>
+        <p>买了一本Node.js核心技术教程，打算学习下下Node.js…..</p>
 <a id="more"></a>
+<p><img src="/article/4a597e2d/NodeJs.jpg" alt="avatar"></p>
+<h2 id="第一章-模块化编程"><a href="#第一章-模块化编程" class="headerlink" title="第一章 模块化编程"></a>第一章 模块化编程</h2><p>什么是模块化思想：把一个非常复杂的系统结构细化到具体的功能点，每个功能点看做是一个模块，然后通过某种规则把这些小的模块组合到一起，构成模块化系统。这就是模块化。</p>
+<h2 id="第二章-初识Node-js"><a href="#第二章-初识Node-js" class="headerlink" title="第二章 初识Node.js"></a>第二章 初识Node.js</h2><p>JavaScript是一种脚本语言，一般运行在客户端，而Node.js可以使JavaScript运行在服务器端。<br>JavaScript包含ECMAScript、DOM、BOM三个部分，如下：</p>
+<blockquote>
+<p>ECMAScript是JavaScript的核心语法。<br>DOM是HTML和XML的应用程序接口（API）用于控制文档的内容和结构<br>BOM（浏览器对象模型）可以对浏览器窗口进行访问和控制</p>
+</blockquote>
+<p>客户端的JavaScript主要用来处理页面的交互，而服务器端的JavaScript主要用来处理数据的交互。</p>
+<h3 id="Node-js安装与配置"><a href="#Node-js安装与配置" class="headerlink" title="Node.js安装与配置"></a>Node.js安装与配置</h3><p>1.下载和安装<br>Node.js的官网：<a href="https://node.js.org" target="_blank" rel="noopener">https://node.js.org</a></p>
+<h3 id="Node-js基础入门"><a href="#Node-js基础入门" class="headerlink" title="Node.js基础入门"></a>Node.js基础入门</h3><p>1.REPL运行环境<br>为了使开发者方便测试JavaScript代码，Node.js中提供了一个名为REPL（Read-Eval-Print-Loop）的可交互运行环境<br>常用命令：</p>
 
-<h2 id="一、下载并启用"><a href="#一、下载并启用" class="headerlink" title="一、下载并启用"></a>一、下载并启用</h2><p>进入命令行，下载 yilia 主题，输入：<br><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code><br>修改站点配置文件 _config.yml，找到如下代码：<br><code>theme:landscape</code><br>将 <code>landscape</code> 修改为 <code>yilia</code> 即可。</p>
-<h2 id="二、主题相关设置"><a href="#二、主题相关设置" class="headerlink" title="二、主题相关设置"></a>二、主题相关设置</h2><h3 id="1-“所有文章”按钮的安装"><a href="#1-“所有文章”按钮的安装" class="headerlink" title="1.“所有文章”按钮的安装"></a>1.“所有文章”按钮的安装</h3><p>首先使用命令 node -v 检查版本是不是大于 6.2<br>在博客根目录执行以下命令：<br><code>npm i hexo-generator-json-content --save</code><br>在博客配置文件 _config.yml 最下面加上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">jsonContent:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  meta: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  pages: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  posts:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    title: true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    date: true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    path: true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    text: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    raw: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    content: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    slug: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    updated: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    comments: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    link: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    permalink: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    excerpt: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    categories: false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    tags: true</span></pre></td></tr></table></figure>
-<h3 id="2-添加图片资源文件夹"><a href="#2-添加图片资源文件夹" class="headerlink" title="2.添加图片资源文件夹"></a>2.添加图片资源文件夹</h3><p>路径为 <code>themes/yilia/source/</code> 下，可添加一个 <code>assets</code> 文件夹，里面存放图片资源即可<br>需要添加头像或者微信/支付宝二维码图片，直接引用即可。路径为 <code>themes/yilia/_config.yml</code> 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># 微信二维码图片</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">weixin:  &#x2F;assets&#x2F;img&#x2F;wechat.png</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"># 头像图片</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">avatar:  &#x2F;assets&#x2F;img&#x2F;head.jpg</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"># 网页图标</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">favicon:  &#x2F;assets&#x2F;img&#x2F;head.jpg</span></pre></td></tr></table></figure>
-<h3 id="3-文章显示摘要"><a href="#3-文章显示摘要" class="headerlink" title="3.文章显示摘要"></a>3.文章显示摘要</h3><p>在你 MD 格式文章正文插入 <code>&lt;!-- more --&gt;</code> 即可，只会显示它之前的，此后的就不显示，点击文章标题，全文阅读才可看到，同时注释掉文件 <code>themes/yilia/_config.yml</code> 里的：<br><code># excerpt_link: more</code></p>
-<h3 id="4-文章显示目录"><a href="#4-文章显示目录" class="headerlink" title="4.文章显示目录"></a>4.文章显示目录</h3><p>增加文章目录 TOC ( table of content )，方便阅读文章，在 <code>themes/yilia/_config.yml</code> 中进行配置 <code>toc: 2</code> 即可，它会将你 Markdown 语法的标题，生成目录，目录查看在右下角。</p>
-<h3 id="5-增加归档菜单"><a href="#5-增加归档菜单" class="headerlink" title="5.增加归档菜单"></a>5.增加归档菜单</h3><p>修改 <code>themes/yilia/_config.yml</code> 内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">menu:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">主页:  &#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">归档:  &#x2F;archives&#x2F;index.html</span></pre></td></tr></table></figure>
-<h3 id="6-增加不蒜子统计"><a href="#6-增加不蒜子统计" class="headerlink" title="6.增加不蒜子统计"></a>6.增加不蒜子统计</h3><p>利用这个统计，可以知道你博客的访问量<br>在 themes\yilia\layout_partial\after-footer.ejs最后添加<br>安装不蒜子脚本:<br><code>&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code><br>添加统计网站访问量:<br>修改 themes\yilia\layout_partial\footer.ejs，包括访客数和站点访问总量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># PV方式，单个用户连续点击 n 篇，记录 n 次记录值</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;span id&#x3D;&quot;busuanzi_container_site_pv&quot;&gt;    本站总访问量&lt;span id&#x3D;&quot;busuanzi_value_site_pv&quot;&gt;&lt;&#x2F;span&gt;次&lt;&#x2F;span&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"># UV方式，单个用户连续点击 n 篇，记录 1 次记录值</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&lt;span id&#x3D;&quot;busuanzi_container_site_uv&quot;&gt;  本站访客数&lt;span id&#x3D;&quot;busuanzi_value_site_uv&quot;&gt;&lt;&#x2F;span&gt;人次&lt;&#x2F;span&gt;</span></pre></td></tr></table></figure>
-<p>单篇文章点击量:<br>在需要显示的地方添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># 使用 pv 记录方式，每访问一次，记录一次</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;span id&#x3D;&quot;busuanzi_container_page_pv&quot;&gt;  本文总阅读量&lt;span id&#x3D;&quot;busuanzi_value_page_pv&quot;&gt;&lt;&#x2F;span&gt;次&lt;&#x2F;span&gt;</span></pre></td></tr></table></figure>
-<h3 id="7-修改代码块样式"><a href="#7-修改代码块样式" class="headerlink" title="7.修改代码块样式"></a>7.修改代码块样式</h3><p>默认的代码样式太刺眼了，调成稍微柔和一些的，这里是调成 Atom 风格，以下为两种方式都可以，推荐第一种直接修改编译好的文件，不然还需要重新build。</p>
-<ul>
-<li>直接修改编译好的文件。路径为： <code>theme\yilia\source\main.0cf68a.css</code> </li>
-<li>修改代码背景色，搜索 <code>.article-entry .highlight</code>, 修改background后面的颜色<br><code>![](http://p5sfmckwy.bkt.clouddn.com/img/3_4_code_bg_color.png)</code><br>修改代码字体颜色 <code>.article-entry .highlight .line</code><br>修改源文件重新build。上述资源对应源文件为 <code>yilia\source-src\css\highlight.scss</code>，按照如下方式build<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd 到 yilia 目录下</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">npm install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">npm run dev</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">npm run dist</span></pre></td></tr></table></figure>
-<h3 id="8-更改左侧昵称字体"><a href="#8-更改左侧昵称字体" class="headerlink" title="8.更改左侧昵称字体"></a>8.更改左侧昵称字体</h3>在 <code>themes\yilia\source\main.0cf68a.css</code> 文件里面修改，找到 <code>header-author</code> ，修改里面的 <code>font-family</code> ，改成：<br><code>font-family:&quot;Times New Roman&quot;,Georgia,Serif</code><h3 id="9-左侧显示总文章数"><a href="#9-左侧显示总文章数" class="headerlink" title="9.左侧显示总文章数"></a>9.左侧显示总文章数</h3>打开 <code>themes\yilia\layout\_partial\left-col.ejs</code> 文件在：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;nav class&#x3D;&quot;header-menu&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    &lt;ul&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    &lt;% for (var i in theme.menu)&#123; %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        &lt;li&gt;&lt;a href&#x3D;&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%&#x3D; i %&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    &lt;%&#125;%&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &lt;&#x2F;ul&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;nav&gt;</span></pre></td></tr></table></figure>
-后面添加：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;nav&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    总文章数 &lt;%&#x3D;site.posts.length%&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;nav&gt;</span></pre></td></tr></table></figure>
-<h3 id="10-添加字数统计"><a href="#10-添加字数统计" class="headerlink" title="10.添加字数统计"></a>10.添加字数统计</h3>首先安装 <code>hexo-wordcount</code><br>使用如下命令安装：<br><code>npm i --save hexo-wordcount</code><br>Node 版本7.6.0之前,请安装 2.x 版本 (Node.js v7.6.0 and previous)<br><code>npm install hexo-wordcount@2 --save</code><br>然后在 <code>themes\yilia\layout\_partial\left-col.ejs</code>中添加：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;nav&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    总字数 &lt;span class&#x3D;&quot;post-count&quot;&gt;&lt;%&#x3D; totalcount(site, &#39;0,0.0a&#39;) %&gt;&lt;&#x2F;span&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;nav&gt;</span></pre></td></tr></table></figure>
-添加位置在如下代码的下面：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;nav&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    总文章数 &lt;%&#x3D;site.posts.length%&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;nav&gt;</span></pre></td></tr></table></figure>
-编辑 <code>themes\yilia\layout\_partial\article.ejs</code><br>在header下面加入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;div align&#x3D;&quot;center&quot; class&#x3D;&quot;post-count&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    字数：&lt;%&#x3D; wordcount(post.content) %&gt;字 | 预计阅读时长：&lt;%&#x3D; min2read(post.content) %&gt;分钟</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;div&gt;</span></pre></td></tr></table></figure>
-即可显示单篇字数和预计阅读时长。<h3 id="11添加来必力-livere-评论系统"><a href="#11添加来必力-livere-评论系统" class="headerlink" title="11添加来必力(livere)评论系统"></a>11添加来必力(livere)评论系统</h3>yilia 默认带了几个系统，但是没有来必力，所以可以自己加<br>首先是去注册来必力，然后获取到自己的 <code>id</code><br>新建 <code>themes\yilia\layout\_partial\comment\livere.ejs</code> 文件，输入如下内容：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;!-- 来必力City版安装代码 --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;lv-container&quot; data-id&#x3D;&quot;city&quot; data-uid&#x3D;&quot;&lt;%&#x3D;theme.livere_uid%&gt;&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    (function(d, s) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        var j, e &#x3D; d.getElementsByTagName(s)[0];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        if (typeof LivereTower &#x3D;&#x3D;&#x3D; &#39;function&#39;) &#123; return; &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        j &#x3D; d.createElement(s);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        j.src &#x3D; &#39;https:&#x2F;&#x2F;cdn-city.livere.com&#x2F;js&#x2F;embed.dist.js&#39;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        j.async &#x3D; true;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        e.parentNode.insertBefore(j, e);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;)(document, &#39;script&#39;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;script&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&lt;noscript&gt;为正常使用来必力评论功能请激活JavaScript&lt;&#x2F;noscript&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;div&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&lt;!-- City版安装代码已完成 --&gt;</span></pre></td></tr></table></figure>
-然后编辑 <code>themes\yilia\layout\_partial\article.ejs</code> 文件，找到：<code>&lt;% if (!index &amp;&amp; post.comments){ %&gt;</code>，添加：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.livere)&#123; %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;%- partial(&#39;comment&#x2F;livere&#39;, &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">key: post.slug,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">title: post.title,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">url: config.url+url_for(post.path)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;) %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&lt;% &#125; %&gt;</span></pre></td></tr></table></figure>
-在主题配置文件 <code>themes\yilia\_config.yml</code> 中添加以下内容：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">livere: true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">livere_uid: 你的id</span></pre></td></tr></table></figure>
-<h3 id="12修复失效的微信分享二维码"><a href="#12修复失效的微信分享二维码" class="headerlink" title="12修复失效的微信分享二维码"></a>12修复失效的微信分享二维码</h3>打开 <code>themes\yilia\layout\_partial\post\share.ejs</code> 文件<br>把第49行中的 <code>//pan.baidu.com/share/qrcode?url=</code> 修改为：<br><code>//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=</code></li>
-</ul>
+<table>
+<tr>
+	<td>命令</td><td>描述</td>
+</tr>
+<tr>
+	<td>Ctrl+C</td><td>终止当前命令</td>
+</tr>
+<tr>
+	<td>Ctrl+C+C</td><td>终止NodeREPL</td>
+</tr>
+<tr>
+	<td>Ctrl+D</td><td>终止NodeREPL</td>
+</tr>
+<tr>
+	<td>Up/Down</td><td>查看历史命令和修改以前命令</td>
+</tr>
+<tr>
+	<td>Tab</td><td>当前指令列表</td>
+</tr>
+<tr>
+	<td>.help</td><td>显示所有命令的列表</td>
+</tr>
+<tr>
+	<td>.break</td><td>退出多行表达式</td>
+</tr>
+<tr>
+	<td>.clear</td><td>从多行表达式退出</td>
+</tr>
+<tr>
+	<td>.save filename</td><td>当前Node REPL会话保存到文件中</td>
+</tr>
+<tr>
+	<td>.load filename</td><td>加载文件内容到当前Node REPL会话</td>
+</tr>
+</table>
+
+<p>Chrome浏览器中的Console控制台就是一个REPL运行环境<br>2.global对象和模块作用域</p>
 
       
 
   
-      
+      <!-- 添加版权声明 -->
+          
       
         <div class="declare">
           <strong>本文作者：</strong>
@@ -280,7 +330,7 @@
           
           <br>
           <strong>本文链接：</strong>
-          http://wyg0514.github.io/2019/12/01/Hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BD%BF%E7%94%A8/
+          <a href="http://wyg0514.github.io/article/4a597e2d.html" title="Node.js核心技术教程 学习笔记" target="_blank">http://wyg0514.github.io/article/4a597e2d.html</a>
           <br>
           <strong>版权声明：</strong>
           本作品采用
@@ -292,6 +342,7 @@
           
         </div>
       
+      <!-- 添加版权声明 -->
 
       
         <div class="page-reward">
@@ -324,15 +375,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		
 		</ul>
@@ -388,7 +431,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://wyg0514.github.io/2019/12/01/Hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wyg0514.github.io/article/4a597e2d.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -402,18 +445,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/01/%E5%9C%A8Hexo%E4%B8%AD%E8%87%AA%E5%8A%A8%E4%B8%BAYilia%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/article/7fe0cd5a.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          在Hexo中自动为Yilia主题增加版权声明
+          解决hexo引用本地图片无法显示问题
         
       </div>
     </a>
   
   
-    <a href="/2019/11/30/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/article/5674cd6f.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在Hexo中自动为Yilia主题增加版权声明</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -440,7 +483,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、下载并启用"><span class="toc-number">1.</span> <span class="toc-text">一、下载并启用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、主题相关设置"><span class="toc-number">2.</span> <span class="toc-text">二、主题相关设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-“所有文章”按钮的安装"><span class="toc-number">2.1.</span> <span class="toc-text">1.“所有文章”按钮的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-添加图片资源文件夹"><span class="toc-number">2.2.</span> <span class="toc-text">2.添加图片资源文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-文章显示摘要"><span class="toc-number">2.3.</span> <span class="toc-text">3.文章显示摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-文章显示目录"><span class="toc-number">2.4.</span> <span class="toc-text">4.文章显示目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-增加归档菜单"><span class="toc-number">2.5.</span> <span class="toc-text">5.增加归档菜单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-增加不蒜子统计"><span class="toc-number">2.6.</span> <span class="toc-text">6.增加不蒜子统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-修改代码块样式"><span class="toc-number">2.7.</span> <span class="toc-text">7.修改代码块样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-更改左侧昵称字体"><span class="toc-number">2.8.</span> <span class="toc-text">8.更改左侧昵称字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-左侧显示总文章数"><span class="toc-number">2.9.</span> <span class="toc-text">9.左侧显示总文章数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-添加字数统计"><span class="toc-number">2.10.</span> <span class="toc-text">10.添加字数统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11添加来必力-livere-评论系统"><span class="toc-number">2.11.</span> <span class="toc-text">11添加来必力(livere)评论系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12修复失效的微信分享二维码"><span class="toc-number">2.12.</span> <span class="toc-text">12修复失效的微信分享二维码</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章-模块化编程"><span class="toc-number">1.</span> <span class="toc-text">第一章 模块化编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章-初识Node-js"><span class="toc-number">2.</span> <span class="toc-text">第二章 初识Node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js安装与配置"><span class="toc-number">2.1.</span> <span class="toc-text">Node.js安装与配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js基础入门"><span class="toc-number">2.2.</span> <span class="toc-text">Node.js基础入门</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -567,11 +610,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">版权</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">版权</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Node.js</a>
               </li>
             
             <div class="clearfix"></div>
